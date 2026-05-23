@@ -5,6 +5,41 @@
 *Newest entries at the top.*
 
 ---
+## 2026-05-23
+
+### Rovelli (1996) — Relational Quantum Mechanics
+**What**
+Rovelli argues that quantum states are not absolute — they are defined
+relative to an observer system. A measurement outcome is not a
+revelation of a pre-existing value; it is the creation of a relational
+fact between two physical systems. The same system can have different
+states relative to different observers simultaneously — and this is not
+a contradiction, it is the structure of reality.
+Key claim: physical variables have values only when systems interact.
+Between interactions, there are no values. There is no "absolute state
+of the world."
+What it means for RTANA:
+The QHDALabs projects were already built on this assumption before the
+language existed. In the bridge experiment: rule_qubit has no definite
+value before measurement. The measurement creates a fact — m ∈ {0,1}
+— relative to the circuit. In RQTE: the timeline {m_0,...,m_N} is a
+sequence of such facts. Time is that sequence.
+Rovelli's framework validates the architecture from the physics side.
+The question now is whether it can be translated into a neural
+architecture — not just a quantum circuit.
+Open questions raised:
+
+Rovelli says facts exist relative to observer systems. In a neural
+network, what is the observer? Is there one — or does the network
+lack a well-defined internal observer entirely?
+If there is no observer inside the network, can there be relational
+facts — and therefore relational time?
+This may be the precise reason current models are ahistorical: not
+the absence of a clock, but the absence of an internal observer.
+
+Connects to: Q1, Q2, Q5
+
+---
 
 ## 2026-05-22
 
