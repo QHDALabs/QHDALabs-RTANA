@@ -123,4 +123,5 @@ https://arxiv.org/abs/2104.13478
 
 | Paper | Data / Date | Notatka / Note | Issue / Q# |
 |---|---|---|---|
-| | | | |
+|https://arxiv.org/abs/quant-ph/9609002  | 23.05.26|Carlo Rovelli's relational interpretation of quantum mechanics is conceptually very close to the assumptions developed in the QHDALabs projects | |
+| | | |
