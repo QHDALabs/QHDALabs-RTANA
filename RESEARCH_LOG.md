@@ -5,9 +5,10 @@
 *Newest entries at the top.*
 
 ---
-2026-05-23
-Rovelli (1996) — Relational Quantum Mechanics
-What:
+## 2026-05-23
+
+### Rovelli (1996) — Relational Quantum Mechanics
+**What**
 Rovelli argues that quantum states are not absolute — they are defined
 relative to an observer system. A measurement outcome is not a
 revelation of a pre-existing value; it is the creation of a relational
