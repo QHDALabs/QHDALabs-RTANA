@@ -95,6 +95,10 @@ the architecture develops.
 *Opened: 2026-05-22*
 
 ---
+🔴 **Q12. This may be the precise reason current models are ahistorical: not the absence of a clock, but the absence of an internal observer?**
+
+---
+
 
 *Add new questions at the bottom of the relevant section.*  
 *When answering: change status, add answer below the question,*  
