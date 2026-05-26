@@ -99,6 +99,17 @@ the architecture develops.
 🔴 **Q12. This may be the precise reason current models are ahistorical: not the absence of a clock, but the absence of an internal observer?**
 
 ---
+**Q13**: Czy bramki GRU są właściwym analogiem "selektywnej uwagi
+na historię relacyjną" — czy jest lepszy mechanizm?
+
+**Q14**: Czy p(t) (prawdopodobieństwo Born'a) wnosi informację
+której nie ma w m(t) — czy jest redundantne?
+
+**Q15**: Wariant B (attention over history) — kiedy jest lepszy
+od wariantu A (GRU)? Czy relacyjna historia wymaga full attention?
+
+---
+
 *Add new questions at the bottom of the relevant section.*  
 *When answering: change status, add answer below the question,*  
 *reference the log entry or commit where the answer emerged.*
