@@ -10,6 +10,8 @@
 
 ---
 
+RTANA is a proposal to change the class of AI systems: from static functions y = f(x) to dynamic processes S(t+1) = F(S(t), x, event) — where the event structure is grounded in relational physics, not engineering convention.
+
 ## The question
 
 > *Can a neural architecture have an internal relational clock —
