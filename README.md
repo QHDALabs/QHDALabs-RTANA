@@ -105,6 +105,44 @@ in `rtana_v1.py`.
 
 ---
 
+## Repository structure
+
+This repository is organized as a small research workspace rather than
+a production package. Start with the conceptual documents, then read
+the specification, then run the prototype.
+
+| Path | Purpose |
+|---|---|
+| `README.md` | Project overview, current status, and entry point for new readers. |
+| `MANIFESTO.md` | Conceptual foundation: why relational temporal awareness matters and what RTANA is trying to test. |
+| `RTANA_SPEC_v1.md` | Formal v1 specification: state `S(t)`, relational event `E(t)`, update loop, and evaluation ideas. |
+| `rtana_v1.py` | Executable proof of concept combining a Page-Wootters-inspired quantum event generator with a neural hidden-state update. |
+| `QUESTIONS.md` | Living list of open research questions. Questions are refined, not deleted. |
+| `QUESTION_ANSWERS.md` | Working answers and hypotheses for the questions in `QUESTIONS.md`. |
+| `LITERATURE.md` | Reading list for RQM, Page-Wootters, neural memory/time architectures, and related work. |
+| `RESEARCH_LOG.md` | Chronological research notes: readings, decisions, observations, and new questions. |
+| `opis.md` | Plain-language Polish explanation for non-specialist readers. |
+| `LICENSE` | MIT license. |
+| `.gitignore` | Local-only files, generated outputs, caches, credentials, and temporary research artifacts. |
+
+### Branch layout
+
+The active integration branch is `develop`. Topic branches are grouped
+by research area:
+
+| Branch | Role |
+|---|---|
+| `main` | Stable public baseline. |
+| `develop` | Integrated research branch. |
+| `research/literature` | Literature notes, research questions, and working answers. |
+| `research/architecture` | Formal architecture/specification work. |
+| `research/pw-engine` | Page-Wootters engine experiments. |
+| `experiments/level1-session` | Session-level RTANA prototype. |
+| `experiments/level2-persistence` | Persistent/inter-session state experiments. |
+| `experiments/level3-autonomous` | Autonomous clock/runtime experiments. |
+
+---
+
 ## RTANA v1 proof of concept
 
 Run:
