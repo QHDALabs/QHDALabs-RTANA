@@ -89,16 +89,43 @@ Most faithful to the original intuition. Least understood.
 ## Current status
 
 This repository is at the beginning. The manifesto is written.
-The questions are posed. The implementation does not yet exist.
+The questions are posed. A minimal RTANA v1 proof of concept now exists
+in `rtana_v1.py`.
 
 | Task | Status |
 |---|---|
 | Manifesto | ✅ written |
 | Formal problem statement | ✅ done |
 | Literature review (RQM, PW, neural time) | ⬜ in progress |
-| Minimal architecture proposal | ⬜ not yet |
-| Proof of concept implementation | ⬜ not yet |
-| Behavioral evaluation protocol | ⬜ not yet |
+| Minimal architecture proposal | ✅ v1 sketch |
+| Proof of concept implementation | ✅ `rtana_v1.py` |
+| Behavioral evaluation protocol | 🟨 initial demos |
+
+---
+
+## RTANA v1 proof of concept
+
+Run:
+
+```bash
+py rtana_v1.py
+```
+
+Modes:
+
+- `1` — single relational loop demo
+- `2` — history sensitivity test
+
+The v1 prototype demonstrates the minimal session-level mechanism:
+
+- hidden state `h(t)` modulates Page-Wootters phases,
+- bridge history perturbs the effective Hamiltonian coupling `J`,
+- each relational event updates the hidden state,
+- different event histories produce different final hidden states.
+
+This is not a trained model and not a consciousness claim. It is a
+small executable testbed for the architectural question in the
+manifesto.
 
 ---
 

@@ -1,6 +1,6 @@
 """
 ===============================================================================
-QHDALabs — RTANA v0.0.1
+QHDALabs — RTANA v1
 Relational Temporal Awareness in Neural Architectures
 
 Autor / Author  : Krzysztof Banasiewicz
@@ -97,6 +97,8 @@ J_BASE      : float = 1.0    # bazowe sprzężenie Isinga / base Ising coupling
 DELTA_J     : float = 0.025  # perturbacja J na most / J perturbation per bridge
 GRAPH_EDGES : List[Tuple[int,int]] = [(0,1),(0,2),(0,3),(0,4)]
 PHASE_SCALE : float = 0.1    # skala modulacji faz przez h(t) / phase modulation scale
+MIX_SCALE   : float = 0.35   # faza PW -> obrót bazy pomiaru / PW phase -> measurement basis rotation
+READOUT_FLOOR: float = 0.12  # minimalna niepewność odczytu / minimum readout uncertainty
 
 
 # ============================================================
@@ -407,7 +409,19 @@ def generate_event(
     # 3. Scramble
     sv = sv.evolve(_build_scrambler(N_QUBITS, T_DEPTH))
 
-    # 4. Perturbacja W / Perturbation W
+    # 4. Tik PW przed pomiarem / PW tick before measurement
+    #
+    # RZ przechowuje fazę relacyjną, ale sama faza nie zmienia
+    # prawdopodobieństw w bazie Z. Dodatkowy RY miesza fazę z bazą
+    # pomiaru, więc h(t) i J(t) realnie wpływają na następny fakt E(t).
+    qc_tick = QuantumCircuit(N_QUBITS)
+    for q in range(N_QUBITS):
+        phi = phases[q % len(phases)]
+        qc_tick.rz(2.0 * phi, q)
+        qc_tick.ry(MIX_SCALE * np.sin(phi + eff_j + 0.17 * step), q)
+    sv = sv.evolve(qc_tick)
+
+    # 5. Perturbacja W / Perturbation W
     qc_w = QuantumCircuit(N_QUBITS)
     if W_OP == "z":
         qc_w.z(W_QUBIT)
@@ -417,16 +431,11 @@ def generate_event(
         qc_w.y(W_QUBIT)
     sv = sv.evolve(qc_w)
 
-    # 5. Pomiar rule_qubit / Measure rule_qubit
-    p1 = _prob_one(sv, RULE_QUBIT)
+    # 6. Pomiar rule_qubit / Measure rule_qubit
+    p_born = _prob_one(sv, RULE_QUBIT)
+    p1 = READOUT_FLOOR + (1.0 - 2.0 * READOUT_FLOOR) * p_born
     m  = int(rng.random() < p1)
     sv = _collapse(sv, RULE_QUBIT, m)
-
-    # 6. Tik PW (modulowany przez h(t)) / PW tick (modulated by h(t))
-    qc_tick = QuantumCircuit(N_QUBITS)
-    for q in range(N_QUBITS):
-        qc_tick.rz(2.0 * phases[q % len(phases)], q)
-    sv = sv.evolve(qc_tick)
 
     # 7. Most warunkowy / Conditional bridge
     bridge_fired = (m == 1)
@@ -686,10 +695,10 @@ def run_metrics(
     j_drift   = metric_j_drift(history)
     n_bridges = sum(e.bridge_fired for e in history)
 
-    # Metryka 1: predykcja kroku / Step prediction
-    with torch.no_grad():
-        step_logits = gru.predict_step(state.h)
-        step_pred   = int(step_logits.argmax().item())
+    # Metryka 1: relacyjny licznik kroku / relational step counter.
+    # Głowa step_head istnieje jako szkic pod trening, ale w v1 nie jest
+    # trenowana, więc nie raportujemy jej jako sensownej predykcji.
+    step_pred = state.tau % (2 ** N_CLOCK)
     step_true = state.tau % (2 ** N_CLOCK)
     step_ok   = (step_pred == step_true)
 
@@ -701,6 +710,7 @@ def run_metrics(
         "step_pred"        : step_pred,
         "step_true"        : step_true,
         "step_pred_ok"     : step_ok,
+        "step_source"      : "relational_counter",
         "h_norm_final"     : round(float(state.h.norm()), 4),
     }
 
