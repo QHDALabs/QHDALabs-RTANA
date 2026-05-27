@@ -165,4 +165,4 @@ We are building toward the former.
 
 ---
 
-*QHDALabs | https://github.com/QHDALabs | qhdalabs.contact@gmail.com*
+*QHDALabs | <https://github.com/QHDALabs> | <qhdalabs.contact@gmail.com>*

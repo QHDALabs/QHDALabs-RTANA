@@ -95,10 +95,60 @@ the architecture develops.
 *Opened: 2026-05-22*
 
 ---
+
 🔴 **Q12. This may be the precise reason current models are ahistorical: not the absence of a clock, but the absence of an internal observer?**
 
 ---
+**Q13**: Czy bramki GRU są właściwym analogiem "selektywnej uwagi
+na historię relacyjną" — czy jest lepszy mechanizm?
 
+**Q14**: Czy p(t) (prawdopodobieństwo Born'a) wnosi informację
+której nie ma w m(t) — czy jest redundantne?
+
+**Q15**: Wariant B (attention over history) — kiedy jest lepszy
+od wariantu A (GRU)? Czy relacyjna historia wymaga full attention?
+
+---
+
+🟡 **Q16. Czy RTANA potrzebuje jawnego modułu obserwatora, czy obserwator
+może być rozproszony po całej architekturze?**  
+Jeśli obserwator jest jawny, łatwiej go ablować i mierzyć. Jeśli jest
+rozproszony, może być bardziej biologicznie i architektonicznie
+naturalny, ale trudniejszy do odróżnienia od zwykłej rekurencji.  
+*Opened: 2026-05-27*  
+*Raised by: `QUESTION_ANSWERS.md`, Q12*
+
+🟡 **Q17. Czy event relacyjny musi być dyskretny?**  
+RQM i pomiar kwantowy sugerują fakt dyskretny, ale sieci neuronowe mogą
+tworzyć fakty miękkie, probabilistyczne albo ciągłe. Gdzie leży granica
+między faktem relacyjnym a zwykłą aktywacją?  
+*Opened: 2026-05-27*  
+*Raised by: `QUESTION_ANSWERS.md`, Q1/Q5*
+
+🟡 **Q18. Jaki jest zdrowy zakres entropii timeline'u dla zegara
+relacyjnego?**  
+Entropia bliska 1.0 oznacza losowość, ale może oznaczać brak pamięci.
+Entropia bliska 0.0 oznacza stabilność, ale może oznaczać martwy zegar.
+Potrzebna jest metryka równowagi między anchoringiem a otwartością.  
+*Opened: 2026-05-27*  
+*Raised by: `QUESTION_ANSWERS.md`, Q7*
+
+🟡 **Q19. Czy `surprise(t) = -log P(m(t))` powinno być częścią eventu
+relacyjnego?**  
+`m(t)` mówi co zaszło, `p(t)` mówi jak bardzo było to oczekiwane.
+Surprise może być silniejszym sygnałem aktualizacji pamięci niż sam
+wynik pomiaru.  
+*Opened: 2026-05-27*  
+*Raised by: `QUESTION_ANSWERS.md`, Q14*
+
+🟡 **Q20. Jak odróżnić użyteczny zegar relacyjny od ukrytego licznika?**  
+Model może nauczyć się zwykłego countera i przejść proste testy kroku.
+Potrzebne są benchmarki, w których liczy się historia faktów, nie tylko
+pozycja w sekwencji.  
+*Opened: 2026-05-27*  
+*Raised by: `QUESTION_ANSWERS.md`, Q3/Q9/Q10*
+
+---
 
 *Add new questions at the bottom of the relevant section.*  
 *When answering: change status, add answer below the question,*  
