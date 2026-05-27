@@ -95,8 +95,8 @@ The questions are posed. The implementation does not yet exist.
 |---|---|
 | Manifesto | ✅ written |
 | Formal problem statement | ✅ done |
-| Literature review (RQM, PW, neural time) | ⬜ in progress |
-| Minimal architecture proposal | ⬜ not yet |
+| Literature review (RQM, PW, neural time) | ⬜ in progress 40% |
+| Minimal architecture proposal | ✅ done |
 | Proof of concept implementation | ⬜ not yet |
 | Behavioral evaluation protocol | ⬜ not yet |
 
@@ -131,7 +131,7 @@ that changes how it reasons and responds.
 
 - [QHDALabs/qmnet](https://github.com/QHDALabs/qmnet) — bridge
   experiments and RQTE prototype (foundation for this project)
-- [QHDALabs site](https://qhdalabs.github.io/QHDALabs/)
+- [QHDALabs site](https://qhdalabs.github.io/)
 
 ---
 
@@ -145,7 +145,7 @@ Collaboration welcome — especially from:
 - Anyone who finds the question interesting enough to disagree with
 
 **Krzysztof Banasiewicz**  
-qhdalabs.contact@gmail.com  
+<qhdalabs.contact@gmail.com>  
 [LinkedIn](https://www.linkedin.com/in/krzyshtoof)
 
 ---
