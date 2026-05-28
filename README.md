@@ -6,11 +6,11 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Status](https://img.shields.io/badge/status-early%20research-orange)]()
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/QHDALabs/rtana/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/QHDALabs/QHDALabs-RTANA/pulls)
 
 ---
 
-RTANA is a proposal to change the class of AI systems: from static functions y = f(x) to dynamic processes S(t+1) = F(S(t), x, event) — where the event structure is grounded in relational physics, not engineering convention.
+RTANA is a proposal to change the class of AI systems: from static functions `y = f(x)` to dynamic processes `S(t+1) = F(S(t), x, event)` — where the event structure is grounded in relational physics, not engineering convention.
 
 ## The question
 
@@ -90,18 +90,20 @@ Most faithful to the original intuition. Least understood.
 
 ## Current status
 
-This repository is at the beginning. The manifesto is written.
-The questions are posed. A minimal RTANA v1 proof of concept now exists
-in `rtana_v1.py`.
-
 | Task | Status |
 |---|---|
 | Manifesto | ✅ written |
-| Formal problem statement | ✅ done |
-| Literature review (RQM, PW, neural time) | ⬜ in progress 40% |
-| Minimal architecture proposal | ✅ done |
-| Proof of concept implementation | ✅ `rtana_v1.py` |
-| Behavioral evaluation protocol | 🟨 initial demos |
+| Formal problem statement (RTANA_SPEC_v1.md) | ✅ done |
+| Literature review (RQM, PW, neural time) | 🟨 in progress ~40% |
+| Minimal architecture — GRU + PW engine | ✅ done |
+| Proof of concept implementation (`rtana_v1.py`) | ✅ working |
+| History sensitivity confirmed (`‖h1−h2‖ = 2.12`) | ✅ confirmed |
+| Timeline entropy in expected range (~0.70 bit) | ✅ confirmed |
+| J Hamiltonian drift through bridge history | ✅ confirmed |
+| Baseline comparison (RTANA vs stateless GRU) | ⬜ not yet |
+| NIST randomness tests on timeline | ⬜ not yet |
+| Scaling to larger hidden state / more qubits | ⬜ not yet |
+| Level 2: inter-session persistence | ⬜ not yet |
 
 ---
 
@@ -113,17 +115,17 @@ the specification, then run the prototype.
 
 | Path | Purpose |
 |---|---|
-| `README.md` | Project overview, current status, and entry point for new readers. |
-| `MANIFESTO.md` | Conceptual foundation: why relational temporal awareness matters and what RTANA is trying to test. |
-| `RTANA_SPEC_v1.md` | Formal v1 specification: state `S(t)`, relational event `E(t)`, update loop, and evaluation ideas. |
-| `rtana_v1.py` | Executable proof of concept combining a Page-Wootters-inspired quantum event generator with a neural hidden-state update. |
-| `QUESTIONS.md` | Living list of open research questions. Questions are refined, not deleted. |
-| `QUESTION_ANSWERS.md` | Working answers and hypotheses for the questions in `QUESTIONS.md`. |
-| `LITERATURE.md` | Reading list for RQM, Page-Wootters, neural memory/time architectures, and related work. |
-| `RESEARCH_LOG.md` | Chronological research notes: readings, decisions, observations, and new questions. |
+| `README.md` | Project overview, current status, entry point. |
+| `MANIFESTO.md` | Conceptual foundation: why relational temporal awareness matters. |
+| `RTANA_SPEC_v1.md` | Formal v1 specification: `S(t)`, `E(t)`, update function, metrics. |
+| `rtana_v1.py` | Executable proof of concept: PW quantum event generator + GRU state update. |
+| `QUESTIONS.md` | Living list of open research questions. Never deleted, only answered or refined. |
+| `QUESTION_ANSWERS.md` | Working answers and hypotheses for questions in `QUESTIONS.md`. |
+| `LITERATURE.md` | Reading list: RQM, Page-Wootters, neural memory/time architectures. |
+| `RESEARCH_LOG.md` | Chronological notes: readings, decisions, observations, new questions. |
 | `opis.md` | Plain-language Polish explanation for non-specialist readers. |
 | `LICENSE` | MIT license. |
-| `.gitignore` | Local-only files, generated outputs, caches, credentials, and temporary research artifacts. |
+| `.gitignore` | Local-only files, generated outputs, caches, credentials. |
 
 ### Branch layout
 
@@ -133,9 +135,9 @@ by research area:
 | Branch | Role |
 |---|---|
 | `main` | Stable public baseline. |
-| `develop` | Integrated research branch. |
-| `research/literature` | Literature notes, research questions, and working answers. |
-| `research/architecture` | Formal architecture/specification work. |
+| `develop` | Integrated research branch — active work here. |
+| `research/literature` | Literature notes, research questions, working answers. |
+| `research/architecture` | Formal architecture and specification work. |
 | `research/pw-engine` | Page-Wootters engine experiments. |
 | `experiments/level1-session` | Session-level RTANA prototype. |
 | `experiments/level2-persistence` | Persistent/inter-session state experiments. |
@@ -143,29 +145,28 @@ by research area:
 
 ---
 
-## RTANA v1 proof of concept
-
-Run:
+## RTANA v1 — proof of concept
 
 ```bash
+pip install torch qiskit qiskit-aer scipy
 py rtana_v1.py
 ```
 
 Modes:
 
-- `1` — single relational loop demo
+- `1` — single relational loop (16 steps, live output)
 - `2` — history sensitivity test
 
-The v1 prototype demonstrates the minimal session-level mechanism:
+**What v1 demonstrates:**
 
-- hidden state `h(t)` modulates Page-Wootters phases,
-- bridge history perturbs the effective Hamiltonian coupling `J`,
-- each relational event updates the hidden state,
-- different event histories produce different final hidden states.
+- `h(t)` modulates Page-Wootters phases — hidden state influences quantum physics
+- bridge history perturbs effective Hamiltonian coupling `J` — past changes future
+- different event histories → different final hidden states (`‖h1−h2‖ = 2.12`)
+- timeline entropy ~0.70 bit — genuinely mixed measurement outcomes
 
-This is not a trained model and not a consciousness claim. It is a
-small executable testbed for the architectural question in the
-manifesto.
+**What v1 is not:**
+a trained model, a consciousness claim, or a production system.
+It is a minimal executable testbed for the architectural question in the manifesto.
 
 ---
 
@@ -183,28 +184,25 @@ that changes how it reasons and responds.
 
 ## Open questions
 
-- What is the minimal architecture that generates internal relational
-  events autonomously?
-- Can the Page-Wootters clock register be translated into a neural
-  architecture analog?
-- What is a "relational fact" in a neural network — and how is it
-  different from a hidden state update?
-- Is there a measurable behavioral difference between a model with
-  and without an internal relational clock?
+- What is the minimal architecture that generates internal relational events autonomously?
+- Can the Page-Wootters clock register be translated into a neural architecture analog?
+- What is a "relational fact" in a neural network — and how is it different from a hidden state update?
+- Is there a measurable behavioral difference between a model with and without an internal relational clock?
+
+Full list with working answers: see `QUESTIONS.md` and `QUESTION_ANSWERS.md`.
 
 ---
 
 ## Related work
 
-- [QHDALabs/qmnet](https://github.com/QHDALabs/qmnet) — bridge
-  experiments and RQTE prototype (foundation for this project)
+- [QHDALabs/qmnet](https://github.com/QHDALabs/qmnet) — bridge experiments and RQTE prototype
 - [QHDALabs site](https://qhdalabs.github.io/)
 
 ---
 
 ## Collaboration
 
-This is independent research. No institutional affiliation.
+Independent research. No institutional affiliation.
 Collaboration welcome — especially from:
 
 - Researchers in neural architecture design
@@ -212,8 +210,7 @@ Collaboration welcome — especially from:
 - Anyone who finds the question interesting enough to disagree with
 
 **Krzysztof Banasiewicz**  
-<qhdalabs.contact@gmail.com>  
-[LinkedIn](https://www.linkedin.com/in/krzyshtoof)
+<qhdalabs.contact@gmail.com> | [LinkedIn](https://www.linkedin.com/in/krzyshtoof)
 
 ---
 
