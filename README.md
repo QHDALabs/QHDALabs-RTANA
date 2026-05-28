@@ -1,5 +1,9 @@
 # QHDALabs-RTANA
 
+<p align="center">
+  <img src="media/qhdalabs_rtana_logo.png" alt="RTANA — Relational Temporal Awareness in Neural Architectures" width="100%">
+</p>
+
 **Relational Temporal Awareness in Neural Architectures**
 
 *Krzysztof Banasiewicz — independent researcher*
