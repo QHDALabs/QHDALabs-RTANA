@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/github/last-commit/QHDALabs/QHDALabs-RTANA/develop?style=flat-square&label=last%20commit" alt="Last Commit">
 </p>
 
+---
 **Relational Temporal Awareness in Neural Architectures**
 
 *Krzysztof Banasiewicz — independent researcher*
