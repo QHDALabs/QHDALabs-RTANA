@@ -1,9 +1,5 @@
 # QHDALabs-RTANA
 
-**Relational Temporal Awareness in Neural Architectures**
-
-*Krzysztof Banasiewicz — independent researcher*
-
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
   <img src="https://img.shields.io/badge/status-early%20research-orange?style=flat-square" alt="Status">
@@ -13,6 +9,10 @@
   <a href="https://github.com/QHDALabs/QHDALabs-RTANA/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
   <img src="https://img.shields.io/github/last-commit/QHDALabs/QHDALabs-RTANA/develop?style=flat-square&label=last%20commit" alt="Last Commit">
 </p>
+
+**Relational Temporal Awareness in Neural Architectures**
+
+*Krzysztof Banasiewicz — independent researcher*
 
 
 RTANA is a proposal to change the class of AI systems: from static functions `y = f(x)` to dynamic processes `S(t+1) = F(S(t), x, event)` — where the event structure is grounded in relational physics, not engineering convention.
