@@ -8,10 +8,15 @@
 
 *Krzysztof Banasiewicz — independent researcher*
 
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Status](https://img.shields.io/badge/status-early%20research-orange)]()
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/QHDALabs/QHDALabs-RTANA/pulls)
-
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/badge/status-early%20research-orange?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/qiskit-1.0%2B-6929C4?style=flat-square&logo=ibm&logoColor=white" alt="Qiskit">
+  <img src="https://img.shields.io/badge/pytorch-2.0%2B-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
+  <a href="https://github.com/QHDALabs/QHDALabs-RTANA/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
+  <img src="https://img.shields.io/github/last-commit/QHDALabs/QHDALabs-RTANA/develop?style=flat-square&label=last%20commit" alt="Last Commit">
+</p>
 ---
 
 RTANA is a proposal to change the class of AI systems: from static functions `y = f(x)` to dynamic processes `S(t+1) = F(S(t), x, event)` — where the event structure is grounded in relational physics, not engineering convention.
