@@ -123,8 +123,8 @@ https://arxiv.org/abs/2104.13478
 
 | Paper | Data / Date | Notatka / Note | Issue / Q# |
 |---|---|---|---|
-|https://arxiv.org/abs/quant-ph/9609002  | 23.05.26|Carlo Rovelli's relational interpretation of quantum mechanics is conceptually very close to the assumptions developed in the QHDALabs projects | |
+|https://arxiv.org/abs/quant-ph/9609002  | 23.05.26|Carlo Rovelli's relational interpretation of quantum mechanics is conceptually very close to the assumptions developed in the QHDALabs projects | | |
 |**Smerlak & Rovelli — Relational EPR (2007)**  
 https://arxiv.org/abs/quant-ph/0604064  
 *Fakty relacyjne w kontekście EPR.*  
-*Relational facts in EPR context.* | 04.06.2026|W Relational Quantum Mechanics nie istnieje „to, co elektron wie” — istnieje tylko to, co jeden system fizyczny może powiedzieć o innym w wyniku interakcji. |
+*Relational facts in EPR context.* | 04.06.2026|W Relational Quantum Mechanics nie istnieje „to, co elektron wie” — istnieje tylko to, co jeden system fizyczny może powiedzieć o innym w wyniku interakcji. | | | |
