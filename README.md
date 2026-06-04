@@ -95,7 +95,7 @@ The questions are posed. The implementation does not yet exist.
 |---|---|
 | Manifesto | ✅ written |
 | Formal problem statement | ✅ done |
-| Literature review (RQM, PW, neural time) | ⬜ in progress 40% |
+| Literature review (RQM, PW, neural time) | ⬜ in progress 50% |
 | Minimal architecture proposal | ✅ done |
 | Proof of concept implementation | ⬜ not yet |
 | Behavioral evaluation protocol | ⬜ not yet |
